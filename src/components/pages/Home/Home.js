@@ -37,7 +37,7 @@ function Home({ media }) {
             enable: false,
           },
           detectRetina: false,
-          fpsLimit: 60,
+          fpsLimit: 24,
           interactivity: {
             detectsOn: 'window',
             events: {
@@ -50,7 +50,7 @@ function Home({ media }) {
                   smooth: 6,
                 },
               },
-              resize: true,
+              resize: false,
             },
           },
           particles: {
@@ -61,7 +61,7 @@ function Home({ media }) {
               color: {
                 value: '#ffffff',
               },
-              distance: 50,
+              distance: 70,
               enable: true,
               opacity: 0.4,
             },
@@ -84,14 +84,14 @@ function Home({ media }) {
                 right: 'split',
                 top: 'split',
               },
-              speed: 1,
+              speed: 0.3,
               spin: {},
             },
             number: {
               density: {
-                area: 600,
+                area: 200,
               },
-              value: 400,
+              value: 200,
             },
             opacity: {
               value: {
@@ -109,15 +109,15 @@ function Home({ media }) {
               },
               value: 1,
               animation: {
-                speed: 40,
-                minimumValue: 0.2,
+                speed: 10,
+                minimumValue: 0.1,
               },
             },
           },
 
           polygon: {
             draw: {
-              enable: false,
+              enable: true,
               strokeWidth: 1,
             },
             enable: true,
