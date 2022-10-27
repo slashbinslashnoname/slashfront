@@ -67,7 +67,7 @@ function Home({ media }) {
             },
             move: {
               noise: {
-                enable: true,
+                enable: false,
               },
 
               attract: {
