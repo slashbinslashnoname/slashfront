@@ -95,6 +95,28 @@ function Items({ items }) {
 
 function Freelancers() {
   const items = [
+
+    {
+      id: 3,
+      name: 'Stéphane',
+      pseudonym: 'JanakaSteph',
+      description: 'Experienced front-end developer. In-depth knowledge of blockchain technology, primarily Bitcoin and Liquid sidechain, but also Ethereum and Monero.',
+      skills: [
+        'Bitcoin, Monero, Ethereum',
+        'React',
+        'React-Native',
+        'Next.js',
+        'Flutter',
+        'Ionic',
+        'Figma',
+        'Sketch',
+        'Serverless',
+      ],
+      twitter: 'https://twitter.com/janakaSteph',
+      github: 'https://github.com/Janaka-Steph',
+      url: 'https://www.bitcoin-studio.com/',
+      photo: '/images/photos/janakasteph.png',
+    },
     {
       id: 1,
       name: 'Romain',
@@ -118,27 +140,6 @@ function Freelancers() {
       github: 'https://github.com/slashbinslashnoname',
       url: 'https://slashbin.xyz',
 
-    },
-    {
-      id: 3,
-      name: 'Stéphane',
-      pseudonym: 'JanakaSteph',
-      description: 'Experienced front-end developer. In-depth knowledge of blockchain technology, primarily Bitcoin and Liquid sidechain, but also Ethereum and Monero.',
-      skills: [
-        'Bitcoin, Monero, Ethereum',
-        'React',
-        'React-Native',
-        'Next.js',
-        'Flutter',
-        'Ionic',
-        'Figma',
-        'Sketch',
-        'Serverless',
-      ],
-      twitter: 'https://twitter.com/janakaSteph',
-      github: 'https://github.com/Janaka-Steph',
-      url: 'https://www.bitcoin-studio.com/',
-      photo: '/images/photos/janakasteph.png',
     },
     {
       id: 5,
