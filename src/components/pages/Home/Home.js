@@ -69,7 +69,6 @@ function Home({ media }) {
               noise: {
                 enable: false,
               },
-
               attract: {
                 rotate: {
                   x: 150,
@@ -100,7 +99,7 @@ function Home({ media }) {
                 max: 0.4,
               },
               animation: {
-                enable: true,
+                enable: false,
                 minimumValue: 0.05,
               },
             },
