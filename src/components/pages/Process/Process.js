@@ -149,7 +149,7 @@ function Process() {
                   </TimelineSeparator>
                   <TimelineContent sx={{ py: '12px', px: 2 }}>
                     <Typography variant="h6" component="span">
-                      Skills Repatition
+                      Skills Repartition
                     </Typography>
                     <Typography>
                       We create a channel inside our private freelancers
