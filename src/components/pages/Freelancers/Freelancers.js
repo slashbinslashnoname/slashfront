@@ -251,7 +251,7 @@ function Freelancers() {
                   (i % nb ? r[r.length - 1].push(e) : r.push([e])) && r,
                 []
               )
-              .map((i, temLite) => (
+              .map((i, itemLite) => (
                 <Items key={i} items={itemLite} />
               ))
           }
