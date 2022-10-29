@@ -251,8 +251,8 @@ function Freelancers() {
                   (i % nb ? r[r.length - 1].push(e) : r.push([e])) && r,
                 []
               )
-              .map((i, itemLite) => (
-                <Items key={i} items={itemLite} />
+              .map((itemLite) => (
+                <Items items={itemLite} />
               ))
           }
         </Grid>
