@@ -1,13 +1,24 @@
-import React from 'react';
+import React from 'react'
 import {
-  Container, Grid, Typography, Divider, Button, Chip, Stack, Paper,
-} from '@mui/material';
+  Container,
+  Grid,
+  Typography,
+  Divider,
+  Button,
+  Chip,
+  Stack,
+  Paper,
+} from '@mui/material'
 import {
-  ArrowOutward, AutoStories, GitHub, Twitter, Home,
-} from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+  ArrowOutward,
+  AutoStories,
+  GitHub,
+  Twitter,
+  Home,
+} from '@mui/icons-material'
+import { Link } from 'react-router-dom'
 
-const nb = 2;
+const nb = 2
 
 function Item({ item }) {
   return (
@@ -26,7 +37,6 @@ function Item({ item }) {
           <Grid item xs={12} md={3}>
             <img src={item.photo} alt={item.name} width="100%" />
           </Grid>
-
         </Grid>
 
         <Grid container spacing={2}>
@@ -59,48 +69,76 @@ function Item({ item }) {
                 </Typography>
               </Grid>
               <Grid item xs={12} md={12}>
-                <Typography variant="body1" component="p" dangerouslySetInnerHTML={{ __html: item.description }} />
+                <Typography
+                  variant="body1"
+                  component="p"
+                  dangerouslySetInnerHTML={{
+                    __html: item.description,
+                  }}
+                />
               </Grid>
             </Grid>
             <Grid container direction="column">
               <Grid item xs={12} md={12}>
-                <Stack
-                  direction="row"
-                  spacing={2}
-                >
-                  {item.github && item.github !== '' && (<a href={item.github} target="_blank" label={`${item.pseudonym} Github`} rel="noreferrer"><GitHub sx={{ color: 'black' }} /></a>)}
-                  {item.twitter && item.twitter !== '' && (<a href={item.twitter} target="_blank" label={`${item.pseudonym} twitter`} rel="noreferrer"><Twitter sx={{ color: 'black' }} /></a>)}
-                  {item.url && item.url !== '' && (<a href={item.url} target="_blank" label={`${item.pseudonym} URL`} rel="noreferrer"><Home sx={{ color: 'black' }} /></a>)}
-
+                <Stack direction="row" spacing={2}>
+                  {item.github && item.github !== '' && (
+                    <a
+                      href={item.github}
+                      target="_blank"
+                      label={`${item.pseudonym} Github`}
+                      rel="noreferrer"
+                    >
+                      <GitHub sx={{ color: 'black' }} />
+                    </a>
+                  )}
+                  {item.twitter && item.twitter !== '' && (
+                    <a
+                      href={item.twitter}
+                      target="_blank"
+                      label={`${item.pseudonym} twitter`}
+                      rel="noreferrer"
+                    >
+                      <Twitter sx={{ color: 'black' }} />
+                    </a>
+                  )}
+                  {item.url && item.url !== '' && (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      label={`${item.pseudonym} URL`}
+                      rel="noreferrer"
+                    >
+                      <Home sx={{ color: 'black' }} />
+                    </a>
+                  )}
                 </Stack>
-
               </Grid>
             </Grid>
-
           </Grid>
         </Grid>
       </Paper>
-
     </Grid>
-  );
+  )
 }
 
 function Items({ items }) {
   return (
     <Grid container>
-      {items.map((item) => (<Item key={item.id} item={item} />))}
+      {items.map((item) => (
+        <Item key={item.id} item={item} />
+      ))}
     </Grid>
-  );
+  )
 }
 
 function Freelancers() {
   const items = [
-
     {
       id: 3,
       name: 'Stéphane',
       pseudonym: 'JanakaSteph',
-      description: 'Experienced front-end developer. In-depth knowledge of blockchain technology, primarily Bitcoin and Liquid sidechain, but also Ethereum and Monero.',
+      description:
+        'Experienced front-end developer. In-depth knowledge of blockchain technology, primarily Bitcoin and Liquid sidechain, but also Ethereum and Monero.',
       skills: [
         'Bitcoin, Monero, Ethereum',
         'React',
@@ -121,7 +159,8 @@ function Freelancers() {
       id: 1,
       name: 'Romain',
       pseudonym: 'Slashbin',
-      description: 'Founder & Builder of this guild of freelancers. Bitcoiner since always. Miner. Develop mining pools. Build front and backend. Loves frontend.',
+      description:
+        'Founder & Builder of this guild of freelancers. Bitcoiner since always. Miner. Develop mining pools. Build front and backend. Loves frontend.',
       skills: [
         'Bitcoin Ecosystem',
         'Ethereum Ecosystem & EVM',
@@ -139,7 +178,6 @@ function Freelancers() {
       twitter: 'https://twitter.com/slashbin',
       github: 'https://github.com/slashbinslashnoname',
       url: 'https://slashbin.xyz',
-
     },
     {
       id: 5,
@@ -163,17 +201,27 @@ function Freelancers() {
       github: 'https://github.com/PABlond',
       url: 'https://github.com/PABlond',
       photo: '/images/photos/nakamoto.png',
-
     },
-
-    /*
     {
-      id: 2,
-      name: 'Alex Werner',
-      pseudonym: 'Obusco',
-      description: 'Hello World!',
-    }, */
-  ];
+      id: 6,
+      name: 'Dolu',
+      pseudonym: 'Dolu',
+      description:
+        'Fullstack developer with a strong backend experience since 10 years. Bitcoin/LN apps developer since 2018',
+      skills: [
+        'Bitcoin, Lightning Network',
+        'Node.js',
+        'C#',
+        'React',
+        'Vue',
+        'Angular',
+      ],
+      twitter: 'https://twitter.com/dolu_web',
+      github: 'http://github.com/dolu89',
+      photo: '/images/photos/nakamoto.png',
+    },
+  ]
+
   return (
     <>
       <Grid className="container container-head">
@@ -190,21 +238,23 @@ function Freelancers() {
               </Typography>
             </Grid>
           </Grid>
-
         </Container>
       </Grid>
 
       <Container className="container-body">
         <Grid container>
           {
-                // 3 by 3 with Reduce
-                items.reduce(
-                  (r, e, i) => (i % nb ? r[r.length - 1].push(e) : r.push([e])) && r,
-                  [],
-                ).map(
-                  (itemLite) => <Items items={itemLite} />,
-                )
-              }
+            // 3 by 3 with Reduce
+            items
+              .reduce(
+                (r, e, i) =>
+                  (i % nb ? r[r.length - 1].push(e) : r.push([e])) && r,
+                []
+              )
+              .map((itemLite) => (
+                <Items items={itemLite} />
+              ))
+          }
         </Grid>
 
         <Divider />
@@ -225,7 +275,6 @@ function Freelancers() {
                   See our culture
                 </Button>
               </Link>
-
             </Grid>
           </Grid>
           <Grid item xs={12} md={6}>
@@ -248,10 +297,9 @@ function Freelancers() {
             </Grid>
           </Grid>
         </Grid>
-
       </Container>
     </>
-  );
+  )
 }
 
-export default Freelancers;
+export default Freelancers

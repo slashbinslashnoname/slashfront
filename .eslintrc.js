@@ -4,8 +4,7 @@ module.exports = {
     es2021: true,
   },
   extends: ['plugin:react/recommended', 'airbnb'],
-  overrides: [
-  ],
+  overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -16,5 +15,6 @@ module.exports = {
     'global-require': 0,
     'react/prop-types': 0,
     'react/forbid-prop-types': 0,
+    semi: 0,
   },
-};
+}
