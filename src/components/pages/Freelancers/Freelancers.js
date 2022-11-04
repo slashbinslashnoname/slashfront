@@ -172,7 +172,7 @@ function Freelancers() {
         'Realtime',
         'Bots',
         'Docker',
-        'Solidity',
+        'Smartcontracts',
       ],
       photo: '/images/photos/slash.png',
       twitter: 'https://twitter.com/slashbin',

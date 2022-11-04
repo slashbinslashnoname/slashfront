@@ -156,7 +156,7 @@ function Home({ media }) {
               <Grid item xs={12} md={12} sx={{ position: 'absolute', bottom: 250 }}>
                 <Typography variant="h6" sx={{ fontWeight: '600' }}>
                   Slashbin.xyz is a decentralized autonomous guild of freelancers and OGs
-                  developpers.
+                  developers.
                 </Typography>
 
                 <Typography variant="h4" sx={{ fontWeight: '600' }}>
