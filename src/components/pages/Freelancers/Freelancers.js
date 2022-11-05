@@ -24,7 +24,7 @@ import { Link } from 'react-router-dom'
 
 const nb = 3
 
-function Item({ item }) {
+function Item({ media, item }) {
   return (
     <Grid
       item
@@ -34,7 +34,6 @@ function Item({ item }) {
       p={3}
       style={{
         alignContent: 'space-between',
-        height: '100%',
         display: 'flex',
         flexWrap: 'wrap',
       }}
@@ -139,7 +138,8 @@ function Items({ items }) {
   )
 }
 
-function Freelancers() {
+function Freelancers({ media }) {
+  console.log(media)
   const items = [
     {
       id: 3,
@@ -283,7 +283,7 @@ function Freelancers() {
                   []
                 )
                 .map((itemLite) => (
-                  <Items items={itemLite} />
+                  <Items media items={itemLite} />
                 ))
             }
           </Grid>
