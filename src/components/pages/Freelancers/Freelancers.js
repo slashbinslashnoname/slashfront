@@ -26,24 +26,42 @@ const nb = 3
 
 function Item({ item }) {
   return (
-    <Grid item xs={12} md={4} p={3} sx={{ borderBottom: '1px solid grey' }}>
+    <Grid
+      item
+      className="ok"
+      xs={12}
+      md={4}
+      p={3}
+      style={{
+        alignContent: 'space-between',
+        height: '100%',
+        display: 'flex',
+        flexWrap: 'wrap',
+      }}
+    >
       <Grid container spacing={2}>
         <Grid item xs={12} md={7}>
           <h3>{item.pseudonym}</h3>
           <p>{item.name}</p>
         </Grid>
 
-        <Grid item xs={12} md={3}>
+        <Grid item xs={3} md={3}>
           <img src={item.photo} alt={item.name} width="100%" />
         </Grid>
-      </Grid>
 
-      <Grid container spacing={2} sx={{ marginTop: 0, paddingTop: 0 }}>
-        <Grid item xs={12} md={5}>
+        <Grid item xs={12} md={12}>
+          <Typography
+            variant="body1"
+            component="p"
+            dangerouslySetInnerHTML={{
+              __html: item.description,
+            }}
+          />
+        </Grid>
+      </Grid>
+      <Grid spacing={2} sx={{ marginTop: 0, paddingTop: 0 }}>
+        <Grid item xs={12} md={12}>
           <Grid container>
-            <Grid item xs={12} md={12}>
-              <h4 style={{ marginTop: 0, paddingTop: 0 }}>Skills</h4>
-            </Grid>
             <Grid item xs={12} md={12}>
               {item.skills.map((skill) => (
                 <Chip
@@ -58,21 +76,7 @@ function Item({ item }) {
           </Grid>
         </Grid>
 
-        <Grid item xs={12} md={7}>
-          <Grid container direction="column">
-            <Grid item xs={12} md={12}>
-              <h4 style={{ marginTop: 0, paddingTop: 0 }}>Description</h4>
-            </Grid>
-            <Grid item xs={12} md={12}>
-              <Typography
-                variant="body1"
-                component="p"
-                dangerouslySetInnerHTML={{
-                  __html: item.description,
-                }}
-              />
-            </Grid>
-          </Grid>
+        <Grid item xs={12} md={12} sx={{}}>
           <Grid container direction="column">
             <Grid item xs={12} md={12}>
               <Stack direction="row" spacing={2}>
