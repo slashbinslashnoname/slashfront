@@ -9,114 +9,116 @@ import {
   Stack,
   Paper,
 } from '@mui/material'
+import Footer from '../../organisms/Footer'
+
 import {
   ArrowOutward,
   AutoStories,
+  Diversity3,
   GitHub,
+  Call,
   Twitter,
   Home,
 } from '@mui/icons-material'
 import { Link } from 'react-router-dom'
 
-const nb = 2
+const nb = 3
 
 function Item({ item }) {
   return (
-    <Grid item xs={12} md={6} p={3}>
-      <Paper elevation={2} style={{ height: '100%' }}>
-        <Grid container spacing={2}>
-          <Grid item xs={12} md={7}>
-            <Typography variant="h4" component="h4">
-              {item.pseudonym}
-            </Typography>
-            <Typography variant="subtitle2" component="p">
-              {item.name}
-            </Typography>
-          </Grid>
-
-          <Grid item xs={12} md={3}>
-            <img src={item.photo} alt={item.name} width="100%" />
-          </Grid>
+    <Grid item xs={12} md={4} p={3} sx={{ borderBottom: '1px solid grey' }}>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={7}>
+          <h3>{item.pseudonym}</h3>
+          <p>{item.name}</p>
         </Grid>
 
-        <Grid container spacing={2}>
-          <Grid item xs={12} md={5}>
-            <Grid container>
-              <Grid item xs={12} md={12}>
-                <Typography variant="h5" component="h5">
-                  Skills
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={12}>
-                {item.skills.map((skill) => (
-                  <Chip
-                    key={skill}
-                    label={skill}
-                    color="secondary"
-                    size="small"
-                    sx={{ m: 0.5 }}
-                  />
-                ))}
-              </Grid>
-            </Grid>
-          </Grid>
+        <Grid item xs={12} md={3}>
+          <img src={item.photo} alt={item.name} width="100%" />
+        </Grid>
+      </Grid>
 
-          <Grid item xs={12} md={7}>
-            <Grid container direction="column">
-              <Grid item xs={12} md={12}>
-                <Typography variant="h5" component="h5">
-                  Description
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={12}>
-                <Typography
-                  variant="body1"
-                  component="p"
-                  dangerouslySetInnerHTML={{
-                    __html: item.description,
-                  }}
+      <Grid container spacing={2} sx={{ marginTop: 0, paddingTop: 0 }}>
+        <Grid item xs={12} md={5}>
+          <Grid container>
+            <Grid item xs={12} md={12}>
+              <h4 style={{ marginTop: 0, paddingTop: 0 }}>Skills</h4>
+            </Grid>
+            <Grid item xs={12} md={12}>
+              {item.skills.map((skill) => (
+                <Chip
+                  key={skill}
+                  label={skill}
+                  color="secondary"
+                  size="small"
+                  sx={{ m: 0.5 }}
                 />
-              </Grid>
-            </Grid>
-            <Grid container direction="column">
-              <Grid item xs={12} md={12}>
-                <Stack direction="row" spacing={2}>
-                  {item.github && item.github !== '' && (
-                    <a
-                      href={item.github}
-                      target="_blank"
-                      label={`${item.pseudonym} Github`}
-                      rel="noreferrer"
-                    >
-                      <GitHub sx={{ color: 'black' }} />
-                    </a>
-                  )}
-                  {item.twitter && item.twitter !== '' && (
-                    <a
-                      href={item.twitter}
-                      target="_blank"
-                      label={`${item.pseudonym} twitter`}
-                      rel="noreferrer"
-                    >
-                      <Twitter sx={{ color: 'black' }} />
-                    </a>
-                  )}
-                  {item.url && item.url !== '' && (
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      label={`${item.pseudonym} URL`}
-                      rel="noreferrer"
-                    >
-                      <Home sx={{ color: 'black' }} />
-                    </a>
-                  )}
-                </Stack>
-              </Grid>
+              ))}
             </Grid>
           </Grid>
         </Grid>
-      </Paper>
+
+        <Grid item xs={12} md={7}>
+          <Grid container direction="column">
+            <Grid item xs={12} md={12}>
+              <h4 style={{ marginTop: 0, paddingTop: 0 }}>Description</h4>
+            </Grid>
+            <Grid item xs={12} md={12}>
+              <Typography
+                variant="body1"
+                component="p"
+                dangerouslySetInnerHTML={{
+                  __html: item.description,
+                }}
+              />
+            </Grid>
+          </Grid>
+          <Grid container direction="column">
+            <Grid item xs={12} md={12}>
+              <Stack direction="row" spacing={2}>
+                {item.github && item.github !== '' && (
+                  <a
+                    href={item.github}
+                    target="_blank"
+                    label={`${item.pseudonym} Github`}
+                    rel="noreferrer"
+                  >
+                    <GitHub sx={{ color: 'black' }} />
+                  </a>
+                )}
+                {item.twitter && item.twitter !== '' && (
+                  <a
+                    href={item.twitter}
+                    target="_blank"
+                    label={`${item.pseudonym} twitter`}
+                    rel="noreferrer"
+                  >
+                    <Twitter sx={{ color: 'black' }} />
+                  </a>
+                )}
+                {item.url && item.url !== '' && (
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    label={`${item.pseudonym} URL`}
+                    rel="noreferrer"
+                  >
+                    <Home sx={{ color: 'black' }} />
+                  </a>
+                )}
+                <a
+                  href={'https://t.me/slashbin'}
+                  target="_blank"
+                  label={`${item.pseudonym} Contact`}
+                  rel="noreferrer"
+                >
+                  <Call sx={{ color: 'black' }} />
+                </a>
+              </Stack>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
     </Grid>
   )
 }
@@ -124,9 +126,11 @@ function Item({ item }) {
 function Items({ items }) {
   return (
     <Grid container>
-      {items.map((item) => (
-        <Item key={item.id} item={item} />
-      ))}
+      {items
+        .sort((a, b) => 0.5 - Math.random())
+        .map((item) => (
+          <Item key={item.id} item={item} />
+        ))}
     </Grid>
   )
 }
@@ -160,7 +164,7 @@ function Freelancers() {
       name: 'Romain',
       pseudonym: 'Slashbin',
       description:
-        'Founder & Builder of this guild of freelancers. Bitcoiner since always. Miner. Develop mining pools. Build front and backend. Loves frontend.',
+        'Founder & Builder of this guild of freelancers. Bitcoiner since always. Miner. Develops mining pools. Former developer in a Sport Betting Company.<br />Build front and backend.',
       skills: [
         'Bitcoin Ecosystem',
         'Ethereum Ecosystem & EVM',
@@ -241,63 +245,90 @@ function Freelancers() {
         </Container>
       </Grid>
 
-      <Container className="container-body">
-        <Grid container>
-          {
-            // 3 by 3 with Reduce
-            items
-              .reduce(
-                (r, e, i) =>
-                  (i % nb ? r[r.length - 1].push(e) : r.push([e])) && r,
-                []
-              )
-              .map((itemLite) => (
-                <Items items={itemLite} />
-              ))
-          }
-        </Grid>
-
-        <Divider />
-        <Grid container>
-          <Grid item xs={12} md={6}>
-            <Grid
-              container
-              direction="column"
-              alignItems="center"
-              justify="center"
-            >
-              <Link to="/culture">
-                <Button
-                  variant="contained"
-                  size="large"
-                  startIcon={<AutoStories />}
-                >
-                  See our culture
-                </Button>
-              </Link>
+      <Grid className="container-section container-grey">
+        <Container>
+          <Grid
+            container
+            direction="column"
+            alignItems="center"
+            justify="center"
+          >
+            <Grid item xs={12} md={12}>
+              <p style={{ textAlign: 'center' }}>
+                Our freelancers are available to work from{' '}
+                <strong>mobile frontends and desktops</strong>, to{' '}
+                <strong>huge backends</strong>, some{' '}
+                <strong>solidity smartcontracts</strong> depending on your needs
+                to <strong>nodes setup</strong> and node administration.
+                <br /> You can contact specifically one of them or hire the
+                guild.
+              </p>
             </Grid>
           </Grid>
-          <Grid item xs={12} md={6}>
-            <Grid
-              container
-              direction="column"
-              alignItems="center"
-              justify="center"
-            >
-              <Link to="/contact">
-                <Button
-                  variant="outlined"
-                  size="large"
-                  style={{ marginLeft: '20px' }}
-                  endIcon={<ArrowOutward />}
-                >
-                  Contact Us
-                </Button>
-              </Link>
+        </Container>
+      </Grid>
+      <Grid className="container-section container-white container-border">
+        <Container maxWidth="lg">
+          <Grid container>
+            {
+              // 3 by 3 with Reduce
+              items
+                .reduce(
+                  (r, e, i) =>
+                    (i % nb ? r[r.length - 1].push(e) : r.push([e])) && r,
+                  []
+                )
+                .map((itemLite) => (
+                  <Items items={itemLite} />
+                ))
+            }
+          </Grid>
+        </Container>
+      </Grid>
+      <Grid className="container-section container-grey">
+        <Container maxWidth="xl">
+          <Grid container>
+            <Grid item xs={12} md={6}>
+              <Grid
+                container
+                direction="column"
+                alignItems="center"
+                justify="center"
+              >
+                <Link to="/process">
+                  <Button
+                    variant="contained"
+                    size="large"
+                    startIcon={<Diversity3 />}
+                  >
+                    See our Process
+                  </Button>
+                </Link>
+              </Grid>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Grid
+                container
+                direction="column"
+                alignItems="center"
+                justify="center"
+              >
+                <Link to="/contact">
+                  <Button
+                    variant="outlined"
+                    size="large"
+                    style={{ marginLeft: '20px' }}
+                    endIcon={<ArrowOutward />}
+                  >
+                    Contact Us
+                  </Button>
+                </Link>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </Grid>
+      <Footer />
     </>
   )
 }

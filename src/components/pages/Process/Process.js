@@ -1,16 +1,9 @@
 import React from 'react'
-import {
-  Container,
-  Grid,
-  Typography,
-  Divider,
-  Button,
-  Paper,
-} from '@mui/material'
+import { Container, Grid, Typography, Button } from '@mui/material'
 
 import {
   ArrowOutward,
-  AutoStories,
+  Diversity3,
   Architecture,
   VideoCameraFront,
   AccessibilityNew,
@@ -18,6 +11,7 @@ import {
   Code,
   AttachMoney,
 } from '@mui/icons-material'
+import Footer from '../../organisms/Footer'
 
 import { Link } from 'react-router-dom'
 
@@ -55,56 +49,46 @@ function Process() {
           </Grid>
         </Container>
       </Grid>
-
-      <Container className="container-body">
-        <Grid container direction="column" alignItems="center" justify="center">
-          <Grid item xs={12} md={12}>
-            <Typography variant="h3" component="h3">
-              You are a project builder
-            </Typography>
-          </Grid>
-          <Grid item xs={12} md={12}>
-            <p>
-              Size doesn&apos;t matter ! We accept very small projects as well
-              as large projects.
-            </p>
-          </Grid>
-          <Grid item xs={12} md={12}>
-            <p>
-              We accompany you to build your Bitcoin or Web3 project from the
-              birth of your idea to its realization through a feasibility study.
-            </p>
-          </Grid>
-        </Grid>
-
-        <Grid container sx={{ padding: '4em' }}>
-          <Paper elevation={2}>
-            <Grid
-              container
-              direction="column"
-              alignItems="center"
-              justify="center"
-            >
-              <Grid item xs={12} md={12}>
-                <Typography variant="h3" component="h3">
-                  Our process
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={12}>
+      <Grid className=" container-section container-grey">
+        <Container>
+          <Grid
+            container
+            direction="column"
+            alignItems="center"
+            justify="center"
+          >
+            <Grid item xs={12} md={12}>
+              <blockquote>
                 <p>
-                  Our process is very agile. We work in sprints of 2 weeks.
-                  <br />
-                  <br />
+                  Size doesn&apos;t matter ! We accept very small projects as
+                  well as large projects.
                 </p>
-              </Grid>
+                <p>
+                  We accompany you to build your Bitcoin or Web3 project from
+                  the birth of your idea to its realization through a
+                  feasibility study and a feasible roadmap through our process.
+                </p>
+              </blockquote>
+            </Grid>
+          </Grid>
+        </Container>
+      </Grid>
+      <Grid className="container-section container-white container-border">
+        <Container maxWidth="md">
+          <Grid container>
+            <Grid item xs={12} md={12} sx={{ textAlign: 'center' }}>
+              <p>
+                Our process is very agile. We work in sprints of 2 weeks.
+                <br />
+                The job is done quickly through these steps.
+                <br />
+              </p>
+            </Grid>
+            <Grid item xs={12} md={12} sx={{ textAlign: 'center' }}>
+              <h3>Our process</h3>
             </Grid>
 
-            <Grid
-              item
-              xs={12}
-              md={12}
-              sx={{ paddingBottom: '4em', paddingRight: '5em' }}
-            >
+            <Grid item xs={12} md={12}>
               <Timeline
                 sx={{
                   [`& .${timelineOppositeContentClasses.root}`]: {
@@ -134,7 +118,11 @@ function Process() {
                     </Typography>
                     <Typography>
                       Visual meeting, introduction about your project,
-                      explanations about how we work.
+                      explanations about how we work
+                      <br />
+                      <Link to="/contact">
+                        Contact us to introduce your project
+                      </Link>
                     </Typography>
                   </TimelineContent>
                 </TimelineItem>
@@ -188,6 +176,8 @@ function Process() {
                     <Typography>
                       We create a channel for you and our freelancers to
                       communicate freely without barriers.
+                      <br />
+                      <Link to="/freelancers">See the team of freelancers</Link>
                     </Typography>
                   </TimelineContent>
                 </TimelineItem>
@@ -347,50 +337,53 @@ function Process() {
                 </TimelineItem>
               </Timeline>
             </Grid>
-          </Paper>
-        </Grid>
-
-        <Divider />
-        <Grid container>
-          <Grid item xs={12} md={6}>
-            <Grid
-              container
-              direction="column"
-              alignItems="center"
-              justify="center"
-            >
-              <Link to="/culture">
-                <Button
-                  variant="contained"
-                  size="large"
-                  startIcon={<AutoStories />}
-                >
-                  See our culture
-                </Button>
-              </Link>
+          </Grid>
+        </Container>
+      </Grid>
+      <Grid className="container-section container-grey">
+        <Container maxWidth="lg">
+          <Grid container>
+            <Grid item xs={12} md={6}>
+              <Grid
+                container
+                direction="column"
+                alignItems="center"
+                justify="center"
+              >
+                <Link to="/freelancers">
+                  <Button
+                    variant="contained"
+                    size="large"
+                    startIcon={<Diversity3 />}
+                  >
+                    See our Freelancers
+                  </Button>
+                </Link>
+              </Grid>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Grid
+                container
+                direction="column"
+                alignItems="center"
+                justify="center"
+              >
+                <Link to="/contact">
+                  <Button
+                    variant="outlined"
+                    size="large"
+                    style={{ marginLeft: '20px' }}
+                    endIcon={<ArrowOutward />}
+                  >
+                    Contact Us
+                  </Button>
+                </Link>
+              </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={12} md={6}>
-            <Grid
-              container
-              direction="column"
-              alignItems="center"
-              justify="center"
-            >
-              <Link to="/contact">
-                <Button
-                  variant="outlined"
-                  size="large"
-                  style={{ marginLeft: '20px' }}
-                  endIcon={<ArrowOutward />}
-                >
-                  Contact Us
-                </Button>
-              </Link>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </Grid>
+      <Footer />
     </>
   )
 }

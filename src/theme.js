@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles'
 
 // A custom theme for this app
 const theme = createTheme({
@@ -8,11 +8,10 @@ const theme = createTheme({
       disableRipple: true, // No more ripple, on the whole application 💣!
     },
   },
-  typography: {
-  },
+  typography: {},
   palette: {
     background: {
-      default: '#ddd',
+      default: '#f6f6f6',
     },
     primary: {
       light: '#757ce8',
@@ -89,10 +88,8 @@ const theme = createTheme({
           borderRadius: '18px',
         },
       },
-
     },
   },
+})
 
-});
-
-export default theme;
+export default theme

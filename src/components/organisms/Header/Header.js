@@ -1,12 +1,17 @@
-import React from 'react';
+import React from 'react'
 
-import { Container, AppBar, Toolbar } from '@mui/material';
-import Menu from '../Menu';
+import { Container, AppBar, Toolbar } from '@mui/material'
+import Menu from '../Menu'
 
 function Header() {
   return (
     <Container>
-      <AppBar position="relative" className="navbar" color="transparent" elevation={0}>
+      <AppBar
+        position="relative"
+        className="navbar"
+        color="transparent"
+        elevation={0}
+      >
         <Toolbar className="navbar-toolbar">
           <div className="navbar-brand">
             <a href="/">
@@ -22,8 +27,8 @@ function Header() {
               className="navbar-nav"
               items={[
                 { link: '/', title: 'Home' },
+                { link: '/services', title: 'Services' },
                 { link: '/process', title: 'Process' },
-                { link: '/culture', title: 'Culture' },
                 { link: '/freelancers', title: 'Freelancers' },
                 { link: '/contact', title: 'Contact' },
               ]}
@@ -32,8 +37,7 @@ function Header() {
         </Toolbar>
       </AppBar>
     </Container>
-
-  );
+  )
 }
 
-export default Header;
+export default Header
