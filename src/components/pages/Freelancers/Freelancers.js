@@ -39,12 +39,12 @@ function Item({ media, item }) {
       }}
     >
       <Grid container spacing={2}>
-        <Grid item xs={12} md={7}>
-          <h3>{item.pseudonym}</h3>
-          <p>{item.name}</p>
+        <Grid item xs={12} md={8}>
+          <h3>{item.name}</h3>
+          <p>{item.pseudonym}</p>
         </Grid>
 
-        <Grid item xs={3} md={3}>
+        <Grid item xs={3} md={4}>
           <img src={item.photo} alt={item.name} width="100%" />
         </Grid>
 
