@@ -228,6 +228,25 @@ function Freelancers({ media }) {
       github: 'http://github.com/dolu89',
       photo: '/images/photos/nakamoto.png',
     },
+    {
+      id: 7,
+      name: 'David',
+      pseudonym: 'chillingpadawan',
+      description:
+        'AI/ML engineer and Bitcoin enthusiast. Develops bots and AI.',
+      skills: [
+        'Python',
+        'Tensorflow',
+        'AI',
+        'Data Science',
+        'Pandas',
+        'Finance',
+      ],
+      twitter: 'https://twitter.com/intelliance',
+      github: 'http://github.com/david',
+      url: 'https://intelliance.ai',
+      photo: '/images/photos/nakamoto.png',
+    },
   ]
 
   return (
@@ -259,8 +278,8 @@ function Freelancers({ media }) {
           >
             <Grid item xs={12} md={12}>
               <p style={{ textAlign: 'center' }}>
-                Our freelancers are available to work from{' '}
-                <strong>mobile frontends and desktops</strong>, to{' '}
+                Our freelancers are available to work, from{' '}
+                <strong>mobile frontends and desktops</strong> to{' '}
                 <strong>huge backends</strong>, some{' '}
                 <strong>solidity smartcontracts</strong> depending on your needs
                 to <strong>nodes setup</strong> and node administration.
