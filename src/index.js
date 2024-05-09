@@ -1,5 +1,5 @@
 import React from 'react'
-import { createRoot } from 'react-dom/client'
+import ReactDom from 'react-dom'
 import CssBaseline from '@mui/material/CssBaseline'
 import { ThemeProvider } from '@mui/material/styles'
 import { StylesProvider } from '@mui/styles'
@@ -12,8 +12,7 @@ import theme from './theme'
 
 import './css/index.css'
 
-const container = document.getElementById('root')
-const root = createRoot(container)
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <ThemeProvider theme={theme}>
