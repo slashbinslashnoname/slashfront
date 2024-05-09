@@ -13,29 +13,29 @@
         "lint:fix": "eslint --fix ."
     },
     "dependencies": {
-        "@emotion/react": "^11.10.4",
-        "@emotion/styled": "^11.10.4",
+        "@emotion/react": "^11.11.4",
+        "@emotion/styled": "^11.11.5",
         "@material-ui/core": "latest",
-        "@material-ui/icons": "^4.9.1",
-        "@mui/icons-material": "^5.10.9",
-        "@mui/lab": "^5.0.0-alpha.104",
-        "@mui/material": "^5.10.10",
-        "@mui/styles": "^5.10.10",
-        "axios": "^0.26.0",
+        "@material-ui/icons": "^4.11.3",
+        "@mui/icons-material": "^5.15.17",
+        "@mui/lab": "^5.0.0-alpha.170",
+        "@mui/material": "^5.15.17",
+        "@mui/styles": "^5.15.17",
+        "axios": "^1.6.8",
         "pathseg": "^1.2.1",
         "prop-types": "^15.8.1",
-        "react": "latest",
-        "react-dom": "latest",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
         "react-image-masonry": "^0.4.0",
         "react-konami-code": "^2.3.0",
         "react-material-ui-carousel": "^3.4.2",
         "react-particles": "^2.3.3",
         "react-rotating-text": "^1.4.1",
-        "react-router-dom": "^5.3.4",
+        "react-router-dom": "^6.23.0",
         "react-router-transition": "^2.1.0",
-        "react-scripts": "latest",
+        "react-scripts": "^5.0.1",
         "react-transition-group": "^4.4.5",
-        "tsparticles": "^2.3.4"
+        "tsparticles": "^3.3.0"
     },
     "browserslist": {
         "production": [
@@ -50,13 +50,13 @@
         ]
     },
     "devDependencies": {
-        "eslint": "^8.25.0",
+        "eslint": "^9.2.0",
         "eslint-config-airbnb": "^19.0.4",
-        "eslint-plugin-import": "^2.26.0",
-        "eslint-plugin-jsx-a11y": "^6.6.1",
-        "eslint-plugin-react": "^7.31.10",
-        "eslint-plugin-react-hooks": "^4.6.0",
-        "prettier": "^2.5.1"
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-jsx-a11y": "^6.8.0",
+        "eslint-plugin-react": "^7.34.1",
+        "eslint-plugin-react-hooks": "^4.6.2",
+        "prettier": "^3.2.5"
     },
     "babel": {
         "presets": [

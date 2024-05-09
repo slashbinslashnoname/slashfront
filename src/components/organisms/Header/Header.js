@@ -27,9 +27,6 @@ function Header() {
               className="navbar-nav"
               items={[
                 { link: '/', title: 'Home' },
-                { link: '/services', title: 'Services' },
-                { link: '/process', title: 'Process' },
-                { link: '/freelancers', title: 'Freelancers' },
                 { link: '/contact', title: 'Contact' },
               ]}
             />
