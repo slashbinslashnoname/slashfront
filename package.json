@@ -27,7 +27,7 @@
         "react-particles": "^2.3.3",
         "react-rotating-text": "^1.4.1",
         "react-router-dom": "^6.23.0",
-        "react-scripts": "^5.0.1",
+        "react-scripts": "^3.0.1",
         "tsparticles": "^3.3.0"
     },
     "browserslist": {
