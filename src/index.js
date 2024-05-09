@@ -12,9 +12,10 @@ import theme from './theme'
 
 import './css/index.css'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const rootNode = document.getElementById('root');
 
-root.render(
+
+ReactDOM.render(
   <ThemeProvider theme={theme}>
     <StylesProvider injectFirst>
       <CssBaseline enableColorScheme />
@@ -23,5 +24,6 @@ root.render(
         <App />
       </Router>
     </StylesProvider>
-  </ThemeProvider>
+  </ThemeProvider>,
+  rootNode
 )
