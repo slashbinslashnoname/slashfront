@@ -13,15 +13,6 @@ export default function App() {
     <div className="parent">
       <Switch>
         <>
-          <Route exact path="/process">
-            <Process />
-          </Route>
-          <Route exact path="/services">
-            <Services />
-          </Route>
-          <Route exact path="/freelancers">
-            <Freelancers />
-          </Route>
           <Route exact path="/contact">
             <Contact />
           </Route>
